@@ -23,9 +23,6 @@ public class Event {
     private String imgUrl;
     private String eventUrl;
 
-    //@OneToMany
-    //private Set<Coupon> coupons = new HashSet<>();
-
     public Event() {
     }
 
