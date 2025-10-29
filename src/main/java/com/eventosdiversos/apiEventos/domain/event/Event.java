@@ -1,5 +1,6 @@
 package com.eventosdiversos.apiEventos.domain.event;
 
+import com.eventosdiversos.apiEventos.domain.address.Address;
 import com.eventosdiversos.apiEventos.domain.coupon.Coupon;
 import jakarta.persistence.*;
 
@@ -22,6 +23,9 @@ public class Event {
     private LocalDateTime date;
     private String imgUrl;
     private String eventUrl;
+
+    @OneToOne
+    private Address address;
 
     public Event() {
     }
