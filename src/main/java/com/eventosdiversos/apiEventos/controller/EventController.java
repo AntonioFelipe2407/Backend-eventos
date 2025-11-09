@@ -15,7 +15,7 @@ public class EventController {
     @Autowired
     private EventService eventService;
 
-    @PostMapping(consumes = "multipart/data")
+    @PostMapping(consumes = "multipart/form-data")
     public ResponseEntity<Event> createEvent(@RequestParam ("title") String title,
                                       @RequestParam ("description") String description,
                                       @RequestParam("date") Long date,
