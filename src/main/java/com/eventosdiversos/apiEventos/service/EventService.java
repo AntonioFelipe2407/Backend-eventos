@@ -21,18 +21,20 @@ public class EventService {
     @Autowired
     private ImageService imageService;
 
+    @Autowired
     private AddressService addressService;
 
     public Event createEvent(EventRequestDTO data) {
 
-        Event newEvent = null;
+        Event newEvent = new Event();
         newEvent = fromDTO(data, newEvent);
-        addressService.associateAddress(data, newEvent); // Instanciando e associando o endereço a um evento
         eventRepository.save(newEvent);
+        addressService.associateAddress(data, newEvent); // Instanciando e associando o endereço a um evento
         return newEvent;
     }
 
 
+    // Metodo para converter um requestDTO para event
     public Event fromDTO(EventRequestDTO dto, Event event) {
 
         String imgUrl = null;
